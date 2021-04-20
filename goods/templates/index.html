@@ -7,10 +7,25 @@
 
     <div class="classes">
         <ul class="classes-items">
-          {% for category in cate_list %}
-             <li class="items {% if currentcid == category.id %} active {% endif %}"><a href="/category/{{ category.id }}">{{ category.cname }}</a></li>
 
-          {% endfor %}
+
+
+
+
+
+                    {% for category in categorys %}
+                     <li class="items {% if currentCid == category.id %} active {% endif %} "><a href="/category/{{ category.id }}">{{ category.cname }}</a></li>
+                    {% endfor %}
+
+
+
+
+
+
+
+
+
+
 
 
         </ul>
