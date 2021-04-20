@@ -16,10 +16,17 @@ class Goods(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.gname
+    # def __str__(self):
+    #     return self.gname
+    #
+    # def getGImg(self):
+    #     return self.inventory_set.first().color.colorurl
+    def __unicode__(self):
+        return u'Goods:%s'%self.gname
 
 
+    def getGImg(self):
+        return self.inventory_set.first().color.colorurl
 class GoodsDetailName(models.Model):
     gdname = models.CharField(max_length=30)
 

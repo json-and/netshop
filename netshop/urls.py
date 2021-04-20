@@ -18,12 +18,23 @@ from django.contrib import admin
 from django.urls import path, include
 
 from netshop.settings import DEBUG, MEDIA_ROOT
-from goods import views
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('index/',views.index)
-]
+# from goods import views
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('index/',views.index),
+#     path(r'^category/(\d+)$',views.index)
+#
+# ]
+from django.conf.urls import url, include
+from django.contrib import admin
 
+from netshop.settings import DEBUG, MEDIA_ROOT
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^', include('goods.urls')),
+
+]
 
 # if DEBUG:
 #     from django.views.static import serve
